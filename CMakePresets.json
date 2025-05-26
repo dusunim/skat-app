@@ -36,19 +36,19 @@
       "generator": "Visual Studio 17 2022"
     },
     {
-      "name": "bundled",
+      "name": "embed",
       "environment": {
-        "BUNDLE_TARGET": "skat-core"
+        "EMBEDDING_TARGET": "skat-core"
       },
       "hidden": true
     },
     {
-      "name": "ninja-bundled",
-      "inherits": ["ninja", "bundled"]
+      "name": "ninja-embed",
+      "inherits": ["ninja", "embed"]
     },
     {
-      "name": "vs-bundled",
-      "inherits": ["vs", "bundled"]
+      "name": "vs-embed",
+      "inherits": ["vs", "embed"]
     }
   ],
   "buildPresets": [
@@ -60,8 +60,8 @@
       "configuration": "Debug"
     },
     {
-      "name": "ninja-bundled/debug",
-      "configurePreset": "ninja-bundled",
+      "name": "ninja-embed/debug",
+      "configurePreset": "ninja-embed",
       "displayName": "build (debug)",
       "description": "build with Ninja/vcpkg (debug)",
       "configuration": "Debug"
@@ -74,8 +74,8 @@
       "configuration": "Release"
     },
     {
-      "name": "ninja-bundled/release",
-      "configurePreset": "ninja-bundled",
+      "name": "ninja-embed/release",
+      "configurePreset": "ninja-embed",
       "displayName": "build (release)",
       "description": "build with Ninja/vcpkg (release)",
       "configuration": "Release"
@@ -88,8 +88,8 @@
       "configuration": "Debug"
     },
     {
-      "name": "vs-bundled/debug",
-      "configurePreset": "vs-bundled",
+      "name": "vs-embed/debug",
+      "configurePreset": "vs-embed",
       "displayName": "build (debug)",
       "description": "build with Visual Studio 17/vcpkg (debug)",
       "configuration": "Debug"
@@ -102,8 +102,8 @@
       "configuration": "Release"
     },
     {
-      "name": "vs-bundled/release",
-      "configurePreset": "vs-bundled",
+      "name": "vs-embed/release",
+      "configurePreset": "vs-embed",
       "displayName": "build (release)",
       "description": "build with Visual Studio 17/vcpkg (release)",
       "configuration": "Release"
