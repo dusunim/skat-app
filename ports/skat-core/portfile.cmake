@@ -35,8 +35,10 @@ file(INSTALL ${extracted_path}/include/
 file(INSTALL ${extracted_path}/lib/
   DESTINATION ${CURRENT_PACKAGES_DIR}/lib)
 
-file(INSTALL ${extracted_path}/bin/
-  DESTINATION ${CURRENT_PACKAGES_DIR}/bin)
+if(EXISTS "${extracted_path}/bin")
+  file(INSTALL ${extracted_path}/bin/
+    DESTINATION ${CURRENT_PACKAGES_DIR}/bin)
+endif()
 
 file(INSTALL ${extracted_path}/lib/cmake/${pkgname}/
   DESTINATION ${CURRENT_PACKAGES_DIR}/share/${pkgname})

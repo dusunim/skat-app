@@ -1,7 +1,7 @@
 get_filename_component(target_name ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 file(GLOB_RECURSE src_files CONFIGURE_DEPENDS *.cpp *.h)
 
-add_library(${target_name} SHARED ${src_files} ${include_files})
+add_executable(${target_name} ${src_files} ${include_files})
 cp_executable_settings(${target_name} "apps")
 
 if(NOT DEFINED ENV{EMBEDDING_TARGET})
