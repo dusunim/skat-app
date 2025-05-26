@@ -1,6 +1,6 @@
 # skat-app
 
-**skat-app** is a skeleton application that demonstrates how to consume `skat-core` as a reusable package and as a directly bundled source within an application.  
+**skat-app** is a skeleton application that demonstrates how to consume `skat-core` as a reusable package and as a directly embedded source within an application.  
 This project provides multiple build presets to support both scenarios and to enable fast iteration cycles during development.
 
 ## Overview
@@ -12,7 +12,7 @@ It shows two main integration strategies:
 1. **Using `skat-core` as a *vcpkg* package**  
    Ideal for stable development environments where `skat-core` is pre-built and versioned.
 
-2. **Directly bundling `skat-core`**  
+2. **Directly embedding `skat-core`**  
    Useful when you need fast iteration with local edits, live debugging, or close integration.  
    This bypasses the package manager and compiles everything together in a single build context.
 
@@ -66,7 +66,7 @@ Example:
 
 This version corresponds to a GitHub release tag on `skat-core`.
 
-## ⚡ Option 2: Bundled build (for fast development iteration)
+## ⚡ Option 2: Embedded build (for fast development iteration)
 
 This mode directly compiles skat-core from source together with the application.
 It is useful for scenarios where you:
@@ -76,12 +76,12 @@ It is useful for scenarios where you:
 
 ### Linux / macOS
 ```bash
-$ cmake --preset ninja-bundled
-$ cmake --build --preset ninja-bundled/release
+$ cmake --preset ninja-embed
+$ cmake --build --preset ninja-embed/release
 ```
 
 ### Windows / Visual Studio
 ```bash
-$ cmake --preset vs-bundled
-$ cmake --build --preset vs-bundled/release
+$ cmake --preset vs-embed
+$ cmake --build --preset vs-embed/release
 ```

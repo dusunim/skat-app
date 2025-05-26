@@ -7,12 +7,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-if(NOT DEFINED ENV{BUNDLE_TARGET})
+if(NOT DEFINED ENV{EMBEDDING_TARGET})
   project(skat-app)
 else()
   project(skat-app-bundled)
 
-  add_subdirectory("$ENV{BUNDLE_TARGET}")
+  add_subdirectory("$ENV{EMBEDDING_TARGET}")
 endif()
 
 add_subdirectory(src/next-cli)
