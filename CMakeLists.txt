@@ -10,7 +10,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 if(NOT DEFINED ENV{EMBEDDING_TARGET})
   project(skat-app)
 else()
-  project(skat-app-bundled)
+  project(skat-app-embed)
 
   add_subdirectory("$ENV{EMBEDDING_TARGET}")
 endif()
